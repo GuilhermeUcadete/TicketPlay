@@ -3,7 +3,11 @@ import {
     Text,
     Image,
     TouchableOpacity,
+    Alert,
 } from "react-native";
+
+import { useContext } from "react";
+import { TicketContext } from "../../context/TicketContext";
 
 import { styles } from "./styles";
 
@@ -14,6 +18,32 @@ export default function EventCard({
     price,
     image,
 }) {
+    const { addTicket } = useContext(TicketContext);
+
+    function handleBuyTicket() {
+        addTicket({
+            title,
+            location,
+            date,
+            price,
+            image,
+        });
+
+        Alert.alert(
+            "🛒 Carrinho",
+            `${title} foi adicionado ao carrinho com sucesso!`,
+            [
+                {
+                    text: "Continuar Comprando",
+                    style: "cancel",
+                },
+                {
+                    text: "OK",
+                },
+            ]
+        );
+    }
+
     return (
         <View style={styles.card}>
             <Image
@@ -39,7 +69,10 @@ export default function EventCard({
                     {price}
                 </Text>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={handleBuyTicket}
+                >
                     <Text style={styles.buttonText}>
                         Comprar Ingresso
                     </Text>
