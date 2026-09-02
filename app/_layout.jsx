@@ -1,18 +1,18 @@
-import { Tabs } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
-import { TicketProvider } from "../src/context/TicketContext";
+import { Stack } from "expo-router";
 
-export default function Layout() {
+import { TicketProvider } from "../src/context/TicketContext";
+import { UserProvider } from "../src/context/UserContext";
+
+export default function RootLayout() {
     return (
-        <TicketProvider>
-            <Tabs
-                screenOptions={{
-                    headerShown: false,
-                    tabBarActiveTintColor: "#2563EB",
-                }}
-            >
-                {/* suas Tabs */}
-            </Tabs>
-        </TicketProvider>
+        <UserProvider>
+            <TicketProvider>
+                <Stack
+                    screenOptions={{
+                        headerShown: false,
+                    }}
+                />
+            </TicketProvider>
+        </UserProvider>
     );
 }
