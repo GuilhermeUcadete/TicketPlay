@@ -1,17 +1,53 @@
-# Aplicativo TicketPlay
+# TicketPlay
 
-Integrantes:                                                                                         
-- Eduardo da Silva Lima       RM554804       
-- Estevam Melo                     RM555124
-- Enzo Bonacasata Motta     RM555372
-- Guilherme Ulacco               RM558418
-- Matheus Hostim                 RM556517
+Aplicação mobile em desenvolvimento para centralizar eventos e ingressos em um único aplicativo.
 
-Este projeto foi desenvolvido utilizando Expo e React Native.
+O projeto está sendo desenvolvido em equipe durante a graduação em Engenharia de Software na FIAP e recebe novas funcionalidades conforme as etapas propostas na disciplina.
+
+> **Status atual:** em desenvolvimento.
+
+## Integrantes
+
+| Nome                  | RM       | GitHub                                                   |
+| --------------------- | -------- | -------------------------------------------------------- |
+| Eduardo da Silva Lima | RM554804 | [@Eduardo-25](https://github.com/Eduardo-25)             |
+| Estevam Melo          | RM555124 | [@StkStevens](https://github.com/StkStevens)             |
+| Enzo Bonacasata Motta | RM555372 | [@Enzo-B-Motta](https://github.com/Enzo-B-Motta)         |
+| Guilherme Ulacco      | RM558418 | [@GuilhermeUcadete](https://github.com/GuilhermeUcadete) |
+| Matheus Hostim        | RM556517 | [@MatheusHostim](https://github.com/MatheusHostim)       |
+
+---
+
+## Tecnologias utilizadas
+
+O projeto utiliza React Native e Expo como base para o desenvolvimento da aplicação mobile.
+
+| Tecnologia                                                                  | Utilização                                |
+| --------------------------------------------------------------------------- | ----------------------------------------- |
+| [React Native](https://reactnative.dev/)                                    | Desenvolvimento da aplicação mobile       |
+| [Expo](https://expo.dev/)                                                   | Ambiente e ferramentas de desenvolvimento |
+| [Expo Router](https://docs.expo.dev/router/introduction/)                   | Navegação e organização das rotas         |
+| JavaScript                                                                  | Linguagem utilizada no desenvolvimento    |
+| [Axios](https://axios-http.com/)                                            | Requisições HTTP                          |
+| [AsyncStorage](https://react-native-async-storage.github.io/async-storage/) | Armazenamento local                       |
+
+O projeto também utiliza bibliotecas do ecossistema React Navigation e React Native para componentes e funcionalidades da aplicação.
 
 ## Instalação
 
-Primeiro só rodar no terminal:
+Clone o repositório:
+
+```bash
+git clone https://github.com/GuilhermeUcadete/TicketPlay.git
+```
+
+Entre na pasta:
+
+```bash
+cd TicketPlay
+```
+
+Instale as dependências:
 
 ```bash
 npm install
@@ -19,352 +55,216 @@ npm install
 
 ## Executando o projeto
 
-Depois disso, só rodar:
+Para iniciar o Expo:
 
 ```bash
 npx expo start
 ```
 
-Depois de iniciar, o terminal vai mostrar algumas opções para poder estar executando o aplicativo:
+Também é possível utilizar:
 
-* Expo Go
-* Emulador Android
-* Simulador iOS
-* Development Build
+```bash
+npm start
+```
 
-Recomendo só segurar o ctrl e clicar no link pra abrir o aplicativo pelo navegador
+Depois de iniciar, o Expo disponibiliza opções para executar o projeto em diferentes ambientes.
+
+### Navegador
+
+```bash
+npm run web
+```
+
+### Android
+
+```bash
+npm run android
+```
+
+### iOS
+
+```bash
+npm run ios
+```
+
+Para testes em dispositivo físico, também é possível utilizar o Expo Go.
+
+Os scripts acima estão definidos no `package.json` atual do projeto.
+
+---
 
 # Documento de Escopo
 
-## 1. Problema
+## Problema
 
-Atualmente, muitas pessoas enfrentam dificuldades para encontrar e comprar ingressos para eventos de forma rápida, segura e organizada. Em alguns casos, as informações sobre datas, horários, locais e disponibilidade de ingressos estão espalhadas em diferentes plataformas, o que dificulta a experiência do usuário.
+Encontrar e comprar ingressos para eventos pode exigir o uso de diferentes plataformas, dificultando a comparação de informações como datas, horários, locais e disponibilidade.
 
-Além disso, organizadores de eventos precisam de uma forma eficiente para divulgar seus eventos, gerenciar vendas e acompanhar a quantidade de ingressos vendidos em tempo real.
+Além disso, organizadores de eventos precisam de ferramentas que ajudem na divulgação dos eventos, gerenciamento das vendas e acompanhamento dos ingressos.
 
-### Problemas Identificados
+O TicketPlay foi pensado como uma plataforma para centralizar essas experiências em um único aplicativo.
 
-* Dificuldade em encontrar eventos em uma única plataforma.
-* Falta de informações claras e centralizadas.
-* Processos de compra demorados ou inseguros.
-* Poucas ferramentas de gerenciamento para organizadores.
-* Risco de perda de vendas por falta de divulgação adequada.
+### Principais problemas identificados
 
-## 2. Público-Alvo
+* Informações de eventos espalhadas em diferentes plataformas.
+* Dificuldade para comparar informações e encontrar eventos.
+* Processos de compra que podem ser demorados.
+* Necessidade de ferramentas para organizadores acompanharem vendas.
+* Dificuldade de divulgação de eventos menores.
 
-O site será destinado a pessoas interessadas em participar de eventos e também a organizadores que desejam divulgar e vender ingressos.
+## Público-alvo
 
-### Público Primário
+O projeto considera dois grupos principais.
 
-* Jovens e adultos entre 16 e 45 anos.
-* Pessoas que frequentam shows, festivais, palestras, congressos, eventos esportivos e culturais.
-* Usuários que preferem comprar ingressos online de forma prática.
+### Público primário
 
-### Público Secundário
+Pessoas interessadas em shows, festivais, palestras, congressos, eventos esportivos e eventos culturais, especialmente usuários que preferem pesquisar e comprar ingressos pela internet.
 
-* Empresas organizadoras de eventos.
-* Produtores independentes.
-* Instituições de ensino que promovem palestras e workshops.
-* Organizadores de eventos esportivos e culturais.
+### Público secundário
 
-## 3. Proposta de Valor
+Organizadores de eventos, produtores independentes, instituições de ensino e responsáveis por eventos esportivos e culturais.
 
-O projeto propõe uma plataforma digital simples, segura e intuitiva para compra e venda de ingressos de eventos.
+## Proposta de valor
 
-### Diferenciais
+A proposta do TicketPlay é reunir informações e funcionalidades relacionadas a eventos e ingressos em uma única aplicação.
 
-* Centralização de diversos eventos em um único lugar.
-* Interface fácil de usar para encontrar eventos rapidamente.
-* Compra de ingressos online com segurança.
-* Informações completas sobre cada evento.
-* Sistema de confirmação digital dos ingressos.
-* Ferramentas de gerenciamento para organizadores acompanharem as vendas.
+Entre os diferenciais planejados estão a centralização dos eventos, busca facilitada, acesso digital aos ingressos e recursos voltados para organizadores.
 
-### Benefícios para os Usuários
-
-* Economia de tempo na busca por eventos.
-* Compra rápida e segura.
-* Facilidade para acessar ingressos digitais.
-* Maior variedade de eventos disponíveis.
-
-### Benefícios para os Organizadores
-
-* Maior alcance de público.
-* Controle das vendas em tempo real.
-* Facilidade na divulgação dos eventos.
-* Redução de custos com venda presencial.
+> As funcionalidades descritas no documento de escopo representam a proposta do produto e não significam que todas já estejam implementadas na versão atual.
 
 ---
 
-# Desenvolvimento de Marca
+# Desenvolvimento da marca
 
-## 1. Nome do App
+## Nome
 
 ### TicketPlay
 
-**Significado:** O nome combina as palavras *Ticket* (ingresso) e *Play* (diversão/entretenimento), transmitindo a ideia de facilidade para encontrar e participar de eventos.
+O nome combina *Ticket* (ingresso) e *Play* (diversão/entretenimento), representando a proposta de facilitar o acesso a eventos e experiências de entretenimento.
 
-**Slogan:** **"Seu próximo evento começa aqui."**
+**Slogan:**
+*"Seu próximo evento começa aqui."*
 
-## 2. Logo
+## Identidade visual
 
-### Conceito
+A identidade visual foi pensada para combinar elementos relacionados a entretenimento, tecnologia e facilidade de uso.
 
-A logo deve transmitir modernidade, conexão e entretenimento.
+### Paleta de cores
 
-**Elementos visuais:**
+| Cor         | Código    | Utilização                    |
+| ----------- | --------- | ----------------------------- |
+| Roxo        | `#7C3AED` | Destaques e elementos visuais |
+| Azul escuro | `#2563EB` | Botões e elementos principais |
+| Branco      | `#FFFFFF` | Fundo                         |
+| Preto       | `#000000` | Texto                         |
 
-* Um letreiro com o nome da marca.
-* Ao fundo, uma imagem opaca de um evento, apresentando diversas pessoas.
-* Cores chamativas e fonte simples para ser facilmente lida e reconhecida.
+### Tipografia
 
-### Estrutura
+**Títulos:** Poppins Bold
 
-**TicketPlay**
-*Seu próximo evento começa aqui.*
+**Textos:** Inter Regular
 
-### Aplicações
-
-* Aplicativo móvel.
-* Site.
-* Redes sociais.
-* Materiais promocionais.
-* Ingressos digitais.
-
-## 3. Paleta de Cores
-
-A paleta foi escolhida para transmitir confiança, tecnologia e energia.
-
-### Cor Principal
-
-**Roxo**
-
-* Hex: `#7C3AED`
-* Uso: elementos de destaque e efeitos visuais.
-
-### Cor Secundária
-
-**Azul Escuro**
-
-* Hex: `#2563EB`
-* Uso: botões principais, cabeçalhos e identidade da marca.
-
-### Fundo
-
-**Branco**
-
-* Hex: `#FFFFFF`
-
-### Texto
-
-**Preto**
-
-* Hex: `#000000`
-
-### Visual da Paleta
-
-| **Cor**        | **Código** |
-| -------------- | ---------- |
-| 🔵 Azul Escuro | `#2563EB`  |
-| 🟣 Roxo        | `#7C3AED`  |
-| ⚪ Branco       | `#FFFFFF`  |
-| ⚫ Preto        | `#000000`  |
-
-## 4. Tipografia
-
-### Títulos
-
-**Poppins Bold**
-
-Características:
-
-* Moderna.
-* Fácil leitura.
-* Aparência tecnológica e profissional.
-
-Exemplo:
-
-> TICKETPLAY
-
-### Textos e Conteúdo
-
-**Inter Regular**
-
-Características:
-
-* Excelente legibilidade em telas.
-* Simples e elegante.
-* Ideal para interfaces digitais.
-
-Exemplo:
-
-> Encontre os melhores eventos e compre seus ingressos de forma rápida e segura.
+As fontes foram escolhidas buscando manter boa legibilidade e uma identidade visual adequada para uma aplicação mobile.
 
 ---
 
-# Ideia de Venda
+# Ideia de negócio
 
-## 1. Modelo de Negócio
+A parte de negócio representa uma proposta para o produto e poderá ser alterada conforme o desenvolvimento do projeto.
 
-A plataforma pode utilizar um modelo de negócio híbrido para garantir sustentabilidade financeira.
+## Modelo de negócio
 
-### Comissão sobre Vendas
+Uma das possibilidades estudadas é um modelo híbrido, combinando comissão sobre vendas, planos para organizadores e divulgação de eventos.
 
-* Cobrança de uma pequena taxa por ingresso vendido.
-* Exemplo: 5% a 10% do valor do ingresso.
+### Comissão sobre vendas
 
-### Plano Freemium
+Cobrança de uma pequena taxa sobre ingressos vendidos pela plataforma.
 
-**Plano Gratuito**
+### Plano freemium
+
+**Plano gratuito**
 
 * Cadastro de eventos.
 * Venda básica de ingressos.
 * Relatórios simples.
 
-**Plano Premium**
+**Plano premium**
 
-* Destaque na página inicial.
+* Destaque de eventos.
 * Relatórios avançados.
-* Ferramentas de marketing.
+* Ferramentas adicionais de divulgação.
 * Suporte prioritário.
 
-### Publicidade e Destaque de Eventos
+### Divulgação de eventos
 
-* Organizadores podem pagar para promover seus eventos.
-* Eventos patrocinados aparecem em posições privilegiadas na plataforma.
+Organizadores poderiam pagar para destacar seus eventos dentro da plataforma.
 
-### Parcerias Comerciais
+### Parcerias
 
-* Integração com empresas de alimentação, hospedagem e transporte.
-* Comissões por indicações e vendas realizadas através da plataforma.
+Também foi considerada a possibilidade de parcerias com empresas de alimentação, hospedagem, transporte e outros serviços relacionados a eventos.
 
-## 2. Diferencial Competitivo
+## Diferenciais planejados
 
-Embora existam plataformas conhecidas no mercado, nosso projeto busca oferecer vantagens específicas.
+O projeto também considera funcionalidades que podem ser desenvolvidas nas próximas etapas, como:
 
-### Personalização Inteligente
+* recomendação de eventos com base nos interesses do usuário;
+* sugestões relacionadas à localização;
+* avaliações de eventos;
+* atualização da disponibilidade de ingressos;
+* carteira digital;
+* maior destaque para eventos locais.
 
-* Recomendação de eventos baseada nos interesses do usuário.
-* Sugestões de eventos próximos à localização.
-
-### Interface Simples e Intuitiva
-
-* Processo de compra reduzido em poucos cliques.
-* Design focado na experiência do usuário.
-
-### Sistema de Avaliações
-
-* Usuários podem avaliar eventos após participarem.
-* Ajuda novos clientes a descobrir eventos de qualidade.
-
-### Organização em Tempo Real
-
-* Atualização instantânea da disponibilidade de ingressos.
-* Controle fácil para organizadores.
-
-### Carteira Digital de Ingressos
-
-* Todos os ingressos ficam armazenados na conta do usuário.
-* Fácil acesso sem necessidade de impressão.
-
-### Foco em Eventos Locais
-
-* Espaço para divulgar pequenos eventos da cidade que normalmente recebem pouca visibilidade em grandes plataformas.
+Esses itens fazem parte da proposta do produto e podem ser alterados conforme os requisitos das próximas etapas.
 
 ---
 
-# Identidade Visual Inicial
+# Protótipos das telas
 
-## Nome da Plataforma
+As telas abaixo foram desenvolvidas como parte do planejamento visual do projeto e servem como referência para o desenvolvimento da aplicação.
 
-**TicketPlay**
+## Login ou cadastro
 
-*Slogan:*
-**"Seu próximo evento começa aqui."**
+A tela prevê o acesso de usuários cadastrados e a criação de novas contas.
 
-## Paleta de Cores
+<img width="351" height="716" alt="Protótipo de login e cadastro" src="https://github.com/user-attachments/assets/af01035d-adca-475d-8229-0cb04d844b8d" />
 
-### Cor Principal
+## Página inicial
 
-* Roxo: `#7C3AED`
+A página inicial foi planejada com busca de eventos, destaques e categorias de navegação.
 
-### Cor Secundária
+Entre as categorias previstas estão:
 
-* Azul Escuro: `#1E40AF`
+* Início
+* Shows
+* Filmes
+* Perfil
+* Ingressos
 
-### Cor de Fundo
+<img width="318" height="664" alt="Protótipo da página inicial" src="https://github.com/user-attachments/assets/55ec4279-034f-4f34-a23d-39bb261c5b88" />
 
-* Branco: `#FFFFFF`
+## Pagamento
 
-### Cor de Texto
+A tela de pagamento foi planejada com diferentes formas de pagamento, incluindo PIX, cartão e boleto.
 
-* Preto: `#000000`
+<img width="348" height="701" alt="Protótipo da tela de pagamento" src="https://github.com/user-attachments/assets/669bd614-cc70-4ad1-919f-dfb787e2bc99" />
+
+## Meus ingressos
+
+A tela foi planejada para reunir os ingressos associados ao usuário, incluindo QR Code, histórico de eventos e opções de compartilhamento.
+
+<img width="942" height="609" alt="Protótipo da tela de ingressos" src="https://github.com/user-attachments/assets/5f59b2ba-ee05-4a11-a3c6-1b5e38cfb8fa" />
+
+## Perfil do usuário
+
+A tela de perfil prevê informações do usuário e opções para alteração dos dados cadastrados.
+
+<img width="406" height="740" alt="Protótipo do perfil do usuário" src="https://github.com/user-attachments/assets/17d99744-5aaf-4052-afc9-7beb894a3cda" />
 
 ---
 
-# Conceito das Telas (Figma)
+# Desenvolvimento
 
-## Tela 1 - Login ou Cadastro de Conta
+O TicketPlay está sendo desenvolvido por etapas. A cada nova atividade proposta na disciplina, novas funcionalidades e requisitos são incorporados ao projeto.
 
-### Elementos
+Por esse motivo, o estado atual do aplicativo pode ser diferente dos protótipos e da proposta inicial descrita neste README.
 
-* Opção para fazer login em uma conta existente.
-* Opção para cadastrar uma nova conta.
-
-<img width="351" height="716" alt="image" src="https://github.com/user-attachments/assets/af01035d-adca-475d-8229-0cb04d844b8d" />
-
-
-## Tela 2 - Página Inicial
-
-### Elementos
-
-* Logo TicketPlay.
-* Barra de pesquisa.
-* Banner de eventos em destaque.
-* Categorias:
-
-  * Início.
-  * Shows.
-  * Filmes.
-  * Perfil.
-  * Ingressos.
-
-<img width="318" height="664" alt="image" src="https://github.com/user-attachments/assets/55ec4279-034f-4f34-a23d-39bb261c5b88" />
-
-## Tela 3 - Pagamento
-
-### Elementos
-
-* Formas de pagamento.
-* QR Code para PIX.
-* Chave PIX.
-* Opção para pagamento com cartão.
-* Opção para pagamento via boleto.
-
-<img width="348" height="701" alt="image" src="https://github.com/user-attachments/assets/669bd614-cc70-4ad5-919f-dfb787e2bc99" />
-
-
-## Tela 4 - Meus Ingressos
-
-### Elementos
-
-* Lista de ingressos comprados.
-* QR Code para entrada.
-* Histórico de eventos.
-* Opção de compartilhar ingresso.
-
-<img width="942" height="609" alt="image" src="https://github.com/user-attachments/assets/5f59b2ba-ee05-4a11-a3c6-1b5e38cfb8fa" />
-
-
-## Tela 5 - Perfil do Usuário
-
-### Elementos
-
-* Foto do usuário.
-* Nome e e-mail do usuário.
-* Opção para alterar o nome.
-* Opção para alterar o e-mail.
-* Opção para alterar ou cadastrar um número de telefone.
-
-<img width="406" height="740" alt="image" src="https://github.com/user-attachments/assets/17d99744-5aaf-4052-afc9-7beb894a3cda" />
-
+O repositório é atualizado conforme o desenvolvimento continua.
